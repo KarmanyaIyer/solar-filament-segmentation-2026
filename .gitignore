@@ -1,0 +1,10 @@
+data/
+runs/
+__pycache__/
+*.pyc
+submission.csv
+yolo_ds*/
+yolo_pred/
+.venv/
+/*.pt
+.ipynb_checkpoints/

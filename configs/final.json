@@ -1,0 +1,59 @@
+{
+ "unet_members": [
+  {
+   "name": "unet_r34",
+   "enc": "resnet34",
+   "res": 1024,
+   "weight": 1.0
+  },
+  {
+   "name": "unet_effb3",
+   "enc": "efficientnet-b3",
+   "res": 1024,
+   "weight": 1.0
+  },
+  {
+   "name": "unet_r34_native",
+   "enc": "resnet34",
+   "res": 2048,
+   "weight": 1.0
+  }
+ ],
+ "yolo": {
+  "models": [
+   {
+    "name": "yolo11s_seg",
+    "base": "yolo11s-seg.pt",
+    "batch": 4
+   },
+   {
+    "name": "yolo11m_seg",
+    "base": "yolo11m-seg.pt",
+    "batch": 2
+   }
+  ],
+  "fold_models": [
+   0,
+   1
+  ],
+  "match": 0.3,
+  "fuse": {
+   "yconf": 0.2,
+   "thr": 0.4,
+   "grow": 2,
+   "min_area": 200,
+   "min_uconf": 0.8
+  }
+ },
+ "postproc": {
+  "thr": 0.4,
+  "gap": 12,
+  "min_area": 200,
+  "min_conf": 0.85
+ },
+ "eval_folds": [
+  0,
+  1
+ ],
+ "train_hours": 11
+}

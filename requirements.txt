@@ -1,0 +1,12 @@
+# Python 3.12
+torch>=2.4
+torchvision>=0.19
+segmentation-models-pytorch==0.6.0
+timm>=1.0
+ultralytics==8.4.212
+opencv-python>=4.10
+pycocotools>=2.0.8
+numpy>=1.26
+pandas>=2.2
+matplotlib>=3.9
+jupyter
