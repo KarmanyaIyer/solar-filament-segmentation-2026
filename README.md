@@ -30,6 +30,7 @@ dropped when small or weakly supported by the U-Net. Masks are written as COCO R
 | `configs/final.json` | ensemble members and fusion parameters of the final submission |
 | `weights/` | trained weights: U-Nets (fp16, 5 folds per member); YOLO models trained on all but 30 observations (`*_all.pt`, the 30 select the best epoch) and without fold 0 / fold 1 (`*_f0.pt`, `*_f1.pt`, used only for the out-of-fold evaluation) |
 | `notebooks/demo.ipynb` | inference, optional retraining, out-of-fold evaluation, examples |
+| `notebooks/demo_executed.ipynb` | the same notebook after a full run, with its outputs (OOF PQ 0.4320, 1083 test filaments) |
 | `report/report.pdf` | 4-page report |
 
 ## Quick start
