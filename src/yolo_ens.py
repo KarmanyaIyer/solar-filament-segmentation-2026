@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Merge instance predictions of several YOLO models (same image) into one list.
 
 Instances from all models are clustered greedily in confidence order (mask IoU > `match`, at most one

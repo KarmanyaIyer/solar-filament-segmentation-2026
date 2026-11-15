@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Train a U-Net against soft consensus masks on the cached images (1024px, or 2048px with RES=2048).
 
 Usage: python train.py --fold 0 --enc resnet34 --epochs 30 --out runs/r34_f0
@@ -60,7 +61,7 @@ class DS(torch.utils.data.Dataset):
         soft = self.softs[i].astype(np.float32) / 255.0
         if self.train:
             c = self.crop
-            # bias crops toward filament pixels half the time
+            # 60% of crops contain a randomly chosen filament pixel (consensus > 0.3)
             if random.random() < 0.6 and soft.max() > 0:
                 ys, xs = np.nonzero(soft > 0.3)
                 if len(ys) == 0:
@@ -106,7 +107,7 @@ def main():
     ap.add_argument("--fold", type=int, default=0)
     ap.add_argument("--enc", default="resnet34")
     ap.add_argument("--arch", default="unet")
-    ap.add_argument("--epochs", type=int, default=40)
+    ap.add_argument("--epochs", type=int, default=30)
     ap.add_argument("--crop", type=int, default=512)
     ap.add_argument("--bs", type=int, default=8)
     ap.add_argument("--lr", type=float, default=5e-4)

@@ -5,6 +5,8 @@ Solution code for the Kaggle competition
 The method is described in `report/report.pdf`; `notebooks/demo.ipynb` reproduces the submission end to end, up to
 half-precision rounding of the stored weights (the notebook writes 1083 test filaments, the submitted file has 1085;
 all 1083 match a submitted mask at mean IoU 0.9999).
+The single-detector variant (YOLO11s only; OOF PQ 0.4276, Table 2 row 5 of the report; same public LB 0.38)
+is reproduced by deleting the `yolo11m_seg` entry from `configs/final.json`.
 
 ## Method in one paragraph
 An ensemble of U-Nets is trained on a *soft consensus* target (per pixel, the fraction of annotators that
@@ -46,7 +48,8 @@ The whole notebook (test inference on 180 images plus the out-of-fold evaluation
 on an RTX 4060 laptop GPU, about 2.5 s per image including model loading (CPU works, much slower). Retraining
 everything from scratch (set `TRAIN_FROM_SCRATCH = True` in the notebook) took about 18 GPU-hours as run
 (15 U-Nets about 11.5 h, 6 detector runs about 6.5 h, on T4 and RTX 4060 GPUs). The training cell mirrors the
-commands we ran model by model; it was not executed as a single end-to-end run.
+commands we ran model by model; it was not executed as one full run, but a 1-epoch run of it (one U-Net fold and
+one detector) completed and wrote every weight file the inference cells read.
 
 Software used on the training and test machines: Python 3.12, PyTorch 2.15 (CUDA 13.2 on the RTX 4060),
 Ultralytics 8.4.212 and segmentation_models_pytorch 0.6.0 (both pinned in `requirements.txt`). The T4 U-Net runs
@@ -95,7 +98,7 @@ public MAGFiLO release, which contains annotations of the test images.
 
 ## License
 Copyright (c) 2026 Karmanya Iyer. AGPL-3.0 (required because the instance branch uses Ultralytics YOLO, which is
-AGPL-3.0). See `LICENSE`.
+AGPL-3.0). See `LICENSE`. The trained weights in `weights/` are released under the same licence.
 
 Third-party components: Ultralytics YOLO11 (AGPL-3.0), segmentation_models_pytorch (MIT), timm (Apache-2.0),
 PyTorch / torchvision (BSD-3-Clause), pycocotools (BSD-2-Clause).

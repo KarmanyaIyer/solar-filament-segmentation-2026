@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Build an Ultralytics YOLO-seg dataset from the 1024px cache.
 
 Every annotator set becomes its own training sample (same image, that annotator's

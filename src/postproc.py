@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Turn a filament probability map into non-overlapping filament instances.
 
 Steps (all parameters tuned on out-of-fold PQ):

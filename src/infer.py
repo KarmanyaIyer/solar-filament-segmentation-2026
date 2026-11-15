@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Model inference helpers: probability maps with flip TTA, OOF generation."""
 from __future__ import annotations
 

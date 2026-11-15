@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Out-of-fold evaluation of the fused pipeline: PQ / SQ / RQ, bootstrap CI, rubric plots.
 
 Usage:

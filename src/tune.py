@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Tune post-processing on out-of-fold probability maps with the exact PQ rule.
 
 For each (thr, gap) we extract candidate instances once, compute their IoU against

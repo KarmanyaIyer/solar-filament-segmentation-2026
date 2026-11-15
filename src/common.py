@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Shared data loading, RLE helpers and the official-equivalent Panoptic Quality metric.
 
 The PQ implementation mirrors the host's self-evaluation notebook

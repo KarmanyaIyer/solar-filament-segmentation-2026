@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Rubric-style evaluation: PQ, IoU / Dice distributions and 1:n / n:1 relations.
 
 Mirrors the organisers' self-evaluation notebook: ground truth is grouped per

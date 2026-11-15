@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Cache images and soft consensus masks at RES x RES (env RES, default 1024; 2048 = native).
 
 For every training observation (stem) we store:

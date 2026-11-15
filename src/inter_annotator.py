@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Inter-annotator panoptic quality: how well one annotator's filaments match another's on the same image.
 
 Every ordered pair (a, b) of different annotators of a multi-annotated observation is scored like a

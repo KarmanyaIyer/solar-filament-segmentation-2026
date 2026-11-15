@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Fuse YOLO-seg instances (what/where a filament is) with U-Net probabilities (pixel extent).
 
 For each image:

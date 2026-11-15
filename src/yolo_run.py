@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Train YOLO11-seg and dump instance predictions (conf + RLE at cache resolution).
 
 Usage: python yolo_run.py --fold 0 --model yolo11s-seg.pt --epochs 60 --tag y11s

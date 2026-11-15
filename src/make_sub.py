@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Create submission.csv for the 180 test images.
 
 Usage (final submission, from precomputed test probability maps and merged detector predictions):
